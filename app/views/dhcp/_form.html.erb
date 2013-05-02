@@ -1,0 +1,9 @@
+<%= form_tag subnet_dhcp_index_path(@subnet) do |f| %>
+  <%= fields_for "record", @record do |f| %>
+    <%= text_f f, :mac %>
+    <%= text_f f, :hostname %>
+    <%= text_f f, :ip %>
+    <%= text_f f, :nextServer %>
+    <%= text_f f, :filename %>
+  <% end %>
+<% end -%>

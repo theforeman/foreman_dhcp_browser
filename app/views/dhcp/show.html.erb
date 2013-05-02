@@ -1,0 +1,13 @@
+<table class='table'>
+  <% @record.attrs.keys.each do |header| %>
+    <th> <%= header %> </td>
+  <% end %>
+  <tr>
+
+  <% @record.attrs.values.each do |value| %>
+    <td> <%= value %> </td>
+  <% end %>
+  </tr>
+</table>
+
+<%= link_to 'All Records', subnet_dhcp_index_path(@subnet), :class => 'btn btn-primary' %>
