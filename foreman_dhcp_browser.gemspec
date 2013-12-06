@@ -8,10 +8,10 @@ Gem::Specification.new do |s|
   s.name        = "foreman_dhcp_browser"
   s.version     = ForemanDhcpBrowser::VERSION
   s.authors     = ["Ohad Levy"]
-  s.email       = ["ohadlevy@gmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of ForemanDhcpBrowser."
-  s.description = "TODO: Description of ForemanDhcpBrowser."
+  s.email       = %q{ohadlevy@gmail.com}
+  s.homepage    = %q{https://github.com/theforeman/foreman_dhcp_browser}
+  s.summary     = %q{DHCP browser plugin for Foreman}
+  s.description = %q{Plugin for Foreman to browse and add/edit/delete DHCP leases independent of Foreman's host creation}
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
