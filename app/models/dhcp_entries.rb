@@ -14,6 +14,8 @@ class DhcpEntries
     @reservations ||= all['reservations'].map do |reservation|
       Net::DHCP::Record.new reservation.merge(:proxy => proxy, :network => subnet.network)
     end
+  rescue ProxyAPI::ProxyException => e
+    []
   end
 
   def leases
