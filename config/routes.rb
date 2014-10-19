@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   resources :subnets do
-    resources:dhcp
+    resources :dhcp
   end
 end

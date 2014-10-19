@@ -1,9 +1,12 @@
-<%= form_tag subnet_dhcp_index_path(@subnet) do |f| %>
-  <%= fields_for "record", @record do |f| %>
-    <%= text_f f, :mac %>
-    <%= text_f f, :hostname %>
-    <%= text_f f, :ip %>
-    <%= text_f f, :nextServer %>
-    <%= text_f f, :filename %>
-  <% end %>
+<%= form_for(@record,
+             :url => @record.persisted? ? subnet_dhcp_path(@subnet, @record.mac) : subnet_dhcp_index_path(@subnet),
+             :method => @record.persisted? ? 'put' : 'post'
+    ) do |f| %>
+  <%= text_f f, :mac, :label => 'MAC' %>
+  <%= text_f f, :hostname, :label => 'Hostname' %>
+  <%= text_f f, :ip, :label => 'IP Address' %>
+  <%= text_f f, :nextServer, :label => 'Next Server' %>
+  <%= text_f f, :filename, :label => 'Boot Filename' %>
+  <%= f.hidden_field :subnet_id, :value => @subnet.id %>
+  <%= submit_or_cancel f, false, :cancel_path => subnet_dhcp_index_path(@subnet) %>
 <% end -%>
