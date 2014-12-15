@@ -1,5 +1,5 @@
 <% title "DHCP Reservations for #{@subnet}" %>
-<% title_actions button_group(link_to_if_authorized _("New DHCP Record"), hash_for_new_subnet_dhcp_path(params[:subnet_id])) %>
+<% title_actions button_group(link_to_if_authorized _('New DHCP Record'), hash_for_new_subnet_dhcp_path(params[:subnet_id])) %>
 <table class="table table-bordered table-striped table-condensed"  data-table='inline'>
   <thead>
   <th>Name</th>
@@ -17,7 +17,7 @@
         <%= action_buttons(
 #TODO               display_link_if_authorized(_("Edit"), hash_for_edit_subnet_dhcp_path(:id => entry.mac, :subnet_id => params[:subnet_id])),
                     display_link_if_authorized(_('Details'), hash_for_subnet_dhcp_path(:id => entry.mac, :subnet_id => params[:subnet_id])),
-                    display_delete_if_authorized(hash_for_subnet_dhcp_path(:id => entry.mac, :subnet_id => params[:subnet_id]), :confirm => _("Delete %s?") % entry, :action => :destroy)) %>
+                    display_delete_if_authorized(hash_for_subnet_dhcp_path(:id => entry.mac, :subnet_id => params[:subnet_id]), :confirm => _('Delete %s?') % entry, :action => :destroy)) %>
       </td>
     </tr>
   <% end -%>

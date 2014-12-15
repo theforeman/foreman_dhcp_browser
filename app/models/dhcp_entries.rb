@@ -2,7 +2,7 @@ class DhcpEntries
   delegate :dhcp_proxy, :to => :subnet
   alias_attribute :proxy, :dhcp_proxy
 
-  def initialize opts = {}
+  def initialize(opts = {})
     @subnet = opts[:subnet]
   end
 
@@ -22,7 +22,7 @@ class DhcpEntries
     all['leases']
   end
 
-  def find mac
+  def find(mac)
     proxy.record(subnet.network, mac)
   end
 
