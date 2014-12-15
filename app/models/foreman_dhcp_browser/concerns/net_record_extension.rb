@@ -3,7 +3,7 @@ module ForemanDhcpBrowser::Concerns::NetRecordExtension
 
   included do
     def self.humanize_class_name
-      "DHCP"
+      'DHCP'
     end
   end
 
