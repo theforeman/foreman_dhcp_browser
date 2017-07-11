@@ -1,5 +1,5 @@
 class DhcpEntries
-  delegate :dhcp_proxy, :to => :subnet
+  delegate :dhcp_proxy, to: :subnet
   alias_attribute :proxy, :dhcp_proxy
 
   def initialize(opts = {})
@@ -12,7 +12,7 @@ class DhcpEntries
 
   def reservations
     @reservations ||= all['reservations'].map do |reservation|
-      Net::DHCP::Record.new reservation.merge(:proxy => proxy, :network => subnet.network)
+      Net::DHCP::Record.new reservation.merge(proxy: proxy, network: subnet.network)
     end
   rescue ProxyAPI::ProxyException => e
     []
@@ -27,6 +27,6 @@ class DhcpEntries
   end
 
   private
-  attr_reader :subnet
 
+  attr_reader :subnet
 end

@@ -16,7 +16,7 @@ module ForemanDhcpBrowser::Concerns::NetRecordExtension
   end
 
   def subnet_id=(id)
-    subnet   = ::Subnet.find_by_id(id) || return
+    subnet   = ::Subnet.find_by(id: id) || return
     @network = subnet.network
     @proxy   = subnet.dhcp_proxy
   end
