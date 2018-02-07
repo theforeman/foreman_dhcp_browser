@@ -1,5 +1,5 @@
 <% title "DHCP Reservations for #{@subnet}" %>
-<% title_actions button_group(link_to_if_authorized _('New DHCP Record'), hash_for_new_subnet_dhcp_path(params[:subnet_id])) %>
+<% title_actions button_group(link_to_if_authorized _('New DHCP Record'), hash_for_new_subnet_dhcp_path(params[:subnet_id]), :class => 'btn btn-primary') %>
 <table class="<%= table_css_classes 'table-condensed' %>" data-table="inline">
   <thead>
   <th>Name</th>
