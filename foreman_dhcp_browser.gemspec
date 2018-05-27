@@ -7,6 +7,7 @@ require 'foreman_dhcp_browser/version'
 Gem::Specification.new do |s|
   s.name        = 'foreman_dhcp_browser'
   s.version     = ForemanDhcpBrowser::VERSION
+  s.license     = 'GPL-3.0'
   s.authors     = ['Ohad Levy']
   s.email       = 'ohadlevy@gmail.com'
   s.homepage    = 'https://github.com/theforeman/foreman_dhcp_browser'
