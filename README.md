@@ -6,13 +6,16 @@ smart proxy.
 
 ## Installation
 
+The foreman_dhcp_browser plugin is available both via RPM/DEB.
+
+eg; yum install tfm-rubygem-foreman_dhcp_browser
+
 See [How_to_Install_a_Plugin](http://projects.theforeman.org/projects/foreman/wiki/How_to_Install_a_Plugin)
 for how to install Foreman plugins
 
-The gem name is "foreman_dhcp_browser".
-
 ## Latest code
 
+The gem name is "foreman_dhcp_browser".
 You can get the master branch of the plugin by specifying your Gemfile in this way:
 
     gem 'foreman_dhcp_browser', :git => "https://github.com/theforeman/foreman_dhcp_browser.git"
