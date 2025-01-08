@@ -1,8 +1,13 @@
 require 'deface'
-module ForemanDhcpBrowser
+module ForemanDHCPBrowser
   class Engine < ::Rails::Engine
-    initializer 'foreman_dhcp_browser.register_plugin', before: :finisher_hook do |_app|
-      Foreman::Plugin.register :foreman_dhcp_browser do
+    engine_name 'foreman_dhcp_browser'
+
+    initializer 'foreman_dhcp_browser.register_plugin', before: :finisher_hook do |app|
+      app.reloader.to_prepare do
+        Foreman::Plugin.register :foreman_dhcp_browser do
+          requires_foreman '>= 3.14.0'
+        end
       end
     end
 
@@ -10,7 +15,7 @@ module ForemanDhcpBrowser
       ::Net::Record.include ::ActiveModel::AttributeMethods
       ::Net::Record.include ::ActiveModel::Conversion
       ::Net::Record.extend ::ActiveModel::Naming
-      ::Net::Record.include ForemanDhcpBrowser::Concerns::NetRecordExtension
+      ::Net::Record.include ForemanDHCPBrowser::Concerns::NetRecordExtension
     end
   end
 end

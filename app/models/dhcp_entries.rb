@@ -1,4 +1,4 @@
-class DhcpEntries
+class DHCPEntries
   delegate :dhcp_proxy, to: :subnet
   alias_attribute :proxy, :dhcp_proxy
 

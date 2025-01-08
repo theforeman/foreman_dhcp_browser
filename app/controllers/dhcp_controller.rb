@@ -1,4 +1,4 @@
-class DhcpController < ApplicationController
+class DHCPController < ApplicationController
   before_action :find_proxy
   before_action :find_record, only: %i[show edit update destroy]
 
@@ -45,7 +45,7 @@ class DhcpController < ApplicationController
     return not_found if params[:subnet_id].blank?
     @subnet = ::Subnet.find(params[:subnet_id])
     return not_found unless @subnet.try(:dhcp?)
-    @entries = DhcpEntries.new(subnet: @subnet)
+    @entries = DHCPEntries.new(subnet: @subnet)
   end
 
   def find_record

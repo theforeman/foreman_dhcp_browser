@@ -1,4 +1,4 @@
-module ForemanDhcpBrowser::Concerns::NetRecordExtension
+module ForemanDHCPBrowser::Concerns::NetRecordExtension
   extend ActiveSupport::Concern
 
   included do

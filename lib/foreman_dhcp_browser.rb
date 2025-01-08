@@ -1,4 +1,4 @@
 require 'foreman_dhcp_browser/engine'
 
-module ForemanDhcpBrowser
+module ForemanDHCPBrowser
 end
