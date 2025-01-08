@@ -7,10 +7,10 @@ module ForemanDhcpBrowser
     end
 
     config.to_prepare do
-      ::Net::Record.send :include, ::ActiveModel::AttributeMethods
-      ::Net::Record.send :include, ::ActiveModel::Conversion
-      ::Net::Record.send :extend, ::ActiveModel::Naming
-      ::Net::Record.send :include, ForemanDhcpBrowser::Concerns::NetRecordExtension
+      ::Net::Record.include ::ActiveModel::AttributeMethods
+      ::Net::Record.include ::ActiveModel::Conversion
+      ::Net::Record.extend ::ActiveModel::Naming
+      ::Net::Record.include ForemanDhcpBrowser::Concerns::NetRecordExtension
     end
   end
 end
