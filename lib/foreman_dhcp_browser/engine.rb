@@ -6,7 +6,7 @@ module ForemanDHCPBrowser
     initializer 'foreman_dhcp_browser.register_plugin', before: :finisher_hook do |app|
       app.reloader.to_prepare do
         Foreman::Plugin.register :foreman_dhcp_browser do
-          requires_foreman '>= 3.14.0'
+          requires_foreman '>= 3.13.0'
         end
       end
     end
